@@ -1,0 +1,9 @@
+POST http://localhost:3333/events
+Content-Type: application/json
+
+
+{
+  "title": "nlw-unite",
+  "details": "Um evento para loucos por programação!",
+  "maximumAttendees" : 100
+}
