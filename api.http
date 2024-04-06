@@ -1,9 +1,34 @@
 POST http://localhost:3333/events
 Content-Type: application/json
 
+{
+  "title": 123,
+  "details": "Um evento para loucos por desenvolvimento de jogos de jogos!",
+  "maximumAttendees" : 1
+}
+
+###
+
+POST http://localhost:3333/events/9e9bd979-9d10-4915-b339-3786b1634f33/attendees
+Content-Type: application/json
 
 {
-  "title": "nlw-unite",
-  "details": "Um evento para loucos por programação!",
-  "maximumAttendees" : 100
+  "name": "Paulo",  
+  "email": "joa@gmail.com"  
 }
+
+###
+
+GET http://localhost:3333/events/25d2b2d8-7d8f-4430-b14f-bda65893f67f
+
+###
+
+GET http://localhost:3333/attendees/5/badge
+
+###
+
+GET http://localhost:3333/attendees/5/check-in
+
+###
+
+GET http://localhost:3333/events/25d2b2d8-7d8f-4430-b14f-bda65893f67f/attendees?query=los
