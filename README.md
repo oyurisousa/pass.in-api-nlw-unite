@@ -53,3 +53,8 @@ npm run db:migrate
 ### Executar o Prisma Studio
 
 npm run db:studio
+
+### Documentação API
+
+- Para documentação da api, foi usado o swagger, uma ferramenta open source, que gera documentações automaticamente.
+- Com a aplicação rodando localmente, execute http://localhost:3333/docs
