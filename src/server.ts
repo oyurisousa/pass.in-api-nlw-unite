@@ -1,5 +1,9 @@
 import fastify from "fastify";
-import { serializerCompiler, validatorCompiler, ZodTypeProvider } from "fastify-type-provider-zod";
+
+import {fastifySwagger} from "@fastify/swagger"
+import {fastifySwaggerUi} from "@fastify/swagger-ui"
+
+import { serializerCompiler, validatorCompiler, ZodTypeProvider,jsonSchemaTransform } from "fastify-type-provider-zod";
 
 import fastifyCors from "@fastify/cors";
 
@@ -15,6 +19,23 @@ export const app = fastify().withTypeProvider<ZodTypeProvider>()
 
 app.register(fastifyCors, {
   origin: "*"
+})
+
+app.register(fastifySwagger, {
+  swagger: {
+    consumes: ["aplication/json"],
+    produces: ["aplication/json"],
+    info: {
+      title: "pass.in",
+      description: "Especificações da API para o back-end da aplixação pass.in, construída durante o nlw Unite da Rocketseat ",
+      version: "1.0.0"
+    }
+  },
+  transform: jsonSchemaTransform,
+})
+
+app.register(fastifySwaggerUi, {
+  routePrefix: "/docs"
 })
 
 app.setValidatorCompiler(validatorCompiler);

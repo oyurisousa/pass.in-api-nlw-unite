@@ -10,6 +10,8 @@ export async function createEvent(app: FastifyInstance){
   .withTypeProvider<ZodTypeProvider>()
   .post("/events", {
     schema: {
+      summary: "Create a event",
+      tags: ["events"], 
       body: z.object({
         title: z.string({invalid_type_error: 'o título deve ser uma string'}).min(4),
         details: z.string().nullable(),
