@@ -2,28 +2,28 @@ POST http://localhost:3333/events
 Content-Type: application/json
 
 {
-  "title": 123,
+  "title": "all in",
   "details": "Um evento para loucos por desenvolvimento de jogos de jogos!",
-  "maximumAttendees" : 1
+  "maximumAttendees" : 4
 }
 
 ###
 
-POST http://localhost:3333/events/9e9bd979-9d10-4915-b339-3786b1634f33/attendees
+POST http://localhost:3333/events/d5b6aa30-8953-43b2-9546-ad91e349a02c/attendees
 Content-Type: application/json
 
 {
-  "name": "Paulo",  
-  "email": "joa@gmail.com"  
+  "name": "maria",  
+  "email": "mary@gmail.com"  
 }
 
 ###
 
-GET http://localhost:3333/events/25d2b2d8-7d8f-4430-b14f-bda65893f67f
+GET http://localhost:3333/events/d5b6aa30-8953-43b2-9546-ad91e349a02css
 
 ###
 
-GET http://localhost:3333/attendees/5/badge
+GET http://localhost:3333/attendees/7/badge
 
 ###
 
